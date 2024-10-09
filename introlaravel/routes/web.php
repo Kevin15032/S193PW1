@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','inicio')->name('rutaInicio');
 Route::view('/from','formulario')->name('rutaFrom');
 Route::view('/consultar','cliente')->name('rutaClientes');
+Route::view('/componet','componentes')->name('rutaComponent');

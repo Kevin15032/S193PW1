@@ -11,7 +11,7 @@
     <div class="container mt-5 col-md-6">
     <h1>Nombre:Domínguez Torres Kevin</h1>
     <h1>Grupo:s193</h1>
-    <h1>Materia: Programacón web</h1>
+    <h1>Materia: Programación web</h1>
     <a href="{{ route('rutaRepaso') }}"  class="btn btn-primary">REPASO 1</a>
      </div>
 </body>

@@ -33,7 +33,11 @@ class ControladorVistas extends Controller
 
        // return $peticion->url();
 
-       return $peticion->ip();
+       //return $peticion->ip();
+
+       $usuario= $peticion->input('txtnombre');
+    session()->flash('exito','Seguardo el usuario: ' .$usuario);
+    return to_route('rutaFrom');
     }
 
 }

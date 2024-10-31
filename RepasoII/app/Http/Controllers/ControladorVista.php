@@ -17,9 +17,11 @@ class ControladorVista extends Controller
         return view('registrolibros');
     }
 
-    public function procesarLibro($peticion)
+    public function procesarLibro(Request $peticion)
     {
-        return 'Si llego la info del cliente :)';
+        $titulo = $peticion->input('txttitulo');
+        session()->flash('exito', 'Se guardó el Libro: ' . $titulo);
+        return to_route('rutaRegistrolibros');
     }
 
 }

@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{request()->routeIs('rutaFrom')?'text-warning':'' }}" aria-current="page" href="{{ route('rutaFrom') }}">Registro Clientes</a>
+                        <a class="nav-link {{request()->routeIs('rutaFrom')?'text-warning':'' }}" aria-current="page" href="{{ route('rutaFrom') }}">{{__('Registro Clientes')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{request()->routeIs('rutaClientes')?'text-warning':'' }}" href="{{ route('rutaClientes') }}">Consulta Clientes</a>
+                        <a class="nav-link {{request()->routeIs('rutaClientes')?'text-warning':'' }}" href="{{ route('rutaClientes') }}">{{__('Consulta Clientes')}}</a>
                     </li>
                 </ul>
             </div>

@@ -20,7 +20,9 @@ class Controlador extends Controller
              ]);
 
              $usuario = $peticion->input('txtPrenda');
-             session()->flash('exito','Se guardo la prenda: '.$usuario);
+             $color = $peticion->input('txtColor');
+             session()->flash('exito','Se guardo la prenda: '.$usuario.$color);
+             
 
             return to_route('rutaPrincipal');
     }

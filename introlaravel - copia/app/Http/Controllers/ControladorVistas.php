@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use  App\Http\Requests\validadorCliente;
 
-
 class ControladorVistas extends Controller
 {
     public function home()
@@ -14,11 +13,14 @@ class ControladorVistas extends Controller
         return view('inicio');
     }
 
-   
+    public function formulario()
+    {
+        return view('formulario');
+    }
 
     public function consulta()
     {
-        //return view('cliente');
+        return view('cliente');
     }
 
     public function procesarCliente(validadorCliente $peticion)
@@ -46,10 +48,10 @@ class ControladorVistas extends Controller
     //   ]);
 
       //redireccion con un mensaje flash
-    //   $usuario = $peticion->input('txtnombre');
-    //   session()->flash('exito','Se guardo el usuario: '.$usuario);
+      $usuario = $peticion->input('txtnombre');
+      session()->flash('exito','Se guardo el usuario: '.$usuario);
 
-    //   return to_route('rutaFrom');
+      return to_route('rutaFrom');
 
     }
 

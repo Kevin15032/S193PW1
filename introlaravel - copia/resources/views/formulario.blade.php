@@ -40,7 +40,7 @@
             </div>
             <div class="card-body text-justify">
 
-                <form action="{{route('rutaEnviar')}}" method="POST">
+                <form action="/enviarCliente" method="POST">
                     @csrf
                     
                     <div class="mb-3">

@@ -59,15 +59,28 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $clientes = DB::table('clientes')->where('id', $id)->first();
+        return view('actualizar', compact('clientes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(validadorCliente $request, string $id)
     {
-        //
+        DB::table('clientes')->where('id', $id)->update([
+            'nombre' => $request->input('nombre'),
+            'apellido' => $request->input('apellido'),
+            'correo' => $request->input('correo'),
+            'telefono' => $request->input('telefono'),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        $usuario = $request->input('txtnombre');
+        session()->flash('exito','Se guardo el usuario: '.$usuario);
+  
+        return to_route('rutaClientes');
+
     }
 
     /**

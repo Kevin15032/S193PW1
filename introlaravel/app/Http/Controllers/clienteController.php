@@ -59,8 +59,8 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        $clientes = DB::table('clientes')->where('id', $id)->first();
-        return view('actualizar', compact('clientes'));
+        $cliente = DB::table('clientes')->where('id', $id)->first();
+        return view('actualizar', compact('cliente'));
     }
 
     /**
@@ -69,15 +69,15 @@ class clienteController extends Controller
     public function update(validadorCliente $request, string $id)
     {
         DB::table('clientes')->where('id', $id)->update([
-            'nombre' => $request->input('nombre'),
-            'apellido' => $request->input('apellido'),
-            'correo' => $request->input('correo'),
-            'telefono' => $request->input('telefono'),
+            'nombre' => $request->input('txtnombre'),
+            'apellido' => $request->input('txtapellido'),
+            'correo' => $request->input('txtcorreo'),
+            'telefono' => $request->input('txttelefono'),
             'updated_at' => Carbon::now(),
         ]);
 
         $usuario = $request->input('txtnombre');
-        session()->flash('exito','Se guardo el usuario: '.$usuario);
+        session()->flash('exito','El cliente ' . $usuario . ' fue actualizado correctamente.');
   
         return to_route('rutaClientes');
 
@@ -88,6 +88,8 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('clientes')->where('id', $id)->delete();
+        session()->flash('exito', 'El cliente fue eliminado correctamente.');
+        return to_route('rutaClientes');
     }
 }

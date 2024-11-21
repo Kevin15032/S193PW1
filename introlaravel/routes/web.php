@@ -38,6 +38,11 @@ Route::post('/cliente',[clienteController::class,'store'])->name('rutaEnviar');
 
 Route::get('/cliente',[clienteController::class,'index'])->name('rutaClientes');
 
-Route::get('/actualizar',[clienteController::class,'edit'])->name('rutaActualizar');
 
-Route::put('/clientes', [clienteController::class, 'update'])->name('rutaActualizar2');
+
+
+Route::get('/clientes/{id}/edit',[clienteController::class,'edit'])->name('rutaEditarCliente');
+
+Route::put('/clientes/{id}', [clienteController::class, 'update'])->name('rutaActualizarCliente');
+
+Route::delete('/clientes/{id}', [ClienteController::class, 'destroy'])->name('rutaEliminarCliente');

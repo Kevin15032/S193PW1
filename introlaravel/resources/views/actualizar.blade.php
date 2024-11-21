@@ -2,10 +2,11 @@
 @section('contenido')
 
 
+
 <div class="card-body text-justify">
     <h2 class="text-center text-primary">Actualizar Cliente</h2>
 
-    <form action="{{ route('rutaActualizar2', $cliente->id) }}" method="POST">
+    <form action="{{ route('rutaActualizarCliente', $cliente->id)}}" method="POST" onsubmit="return confirmarActualizacion()" >
         @csrf
         @method('PUT') 
 
@@ -47,6 +48,11 @@
         </div>
     </form>
 </div>
+<script>
+    function confirmarActualizacion() {
+        return confirm('¿Estás seguro de realizar los cambios?');
+    }
+</script>
 
 @endsection
 

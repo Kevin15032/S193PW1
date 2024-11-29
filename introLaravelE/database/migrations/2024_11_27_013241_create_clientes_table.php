@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('apellido');
             $table->string('correo');
             $table->string('telefono', 20);
-            $table->timestamps(); //te dice la hora de registro
+            $table->timestamps();
         });
     }
 
